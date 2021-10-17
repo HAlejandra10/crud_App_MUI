@@ -1,13 +1,28 @@
 import React from 'react';
 import './App.css';
+import Navbar from './layout/navbar';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from './pages/home/index ';
+import About from './pages/about';
 
-function App() {
+import Users from './pages/users';
+import Contact from './pages/contact';
+
+
+
+const  App=()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-       <div>Hola</div>
-      </header>
-    </div>
+    <Router>
+    <Navbar />
+    
+    <Switch>
+      <Route exact path="/home" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/users" component={Users} />
+    </Switch>
+  </Router>
+
   );
 }
 

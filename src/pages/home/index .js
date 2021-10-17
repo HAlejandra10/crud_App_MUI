@@ -1,10 +1,19 @@
 import React from "react";
 
+
+
+        
 const Home = () => {
     return (
-        <div>Hola como estas</div>
+             <div>
+               
+               <h1>hola soy heidy </h1>
+                
+              </div>      
+    );
+
         
-    )
+    
 }
 
 export default Home;
