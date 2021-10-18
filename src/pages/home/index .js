@@ -7,7 +7,7 @@ const Home = () => {
     return (
              <div>
                
-               <h1>hola soy heidy </h1>
+               <h1>CRUD APP  </h1>
                 
               </div>      
     );
