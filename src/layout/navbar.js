@@ -1,10 +1,10 @@
-// ---------- React imports 
+// @packages
 import React from 'react'
-
-// ---------- Components imports
-import {AppBar, Toolbar, Typography, makeStyles, CssBaseline} from '@material-ui/core';
-import { Link } from "react-router-dom";
-import DrawerComponent from '../components/drawerComponent';
+import  AppBar from '@material-ui/core/AppBar'; 
+import  Toolbar from '@material-ui/core/Toolbar'; 
+import  Typography from '@material-ui/core/Typography'; 
+import {makeStyles} from '@material-ui/core';
+import  Link from "react-router-dom/Link";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -12,10 +12,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: theme.spacing(10),
       display: "flex",
     },
-   logo: {
-      flexGrow: "1",
-      cursor: "pointer",
-    },
+ 
     link: {
       textDecoration: "none",
       color: "white",
@@ -34,13 +31,10 @@ const Navbar =() => {
     return (
         
          <AppBar position="static">
-             <CssBaseline/>
           <Toolbar>
               <Typography variant="h4" className={classes.logo}>
                  CRUD REACT
-             </Typography>
-               <DrawerComponent />
-                                        
+             </Typography>        
               <div className={classes.navlinks}>
             <Link to="/home" className={classes.link}>
               Home

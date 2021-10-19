@@ -1,33 +1,17 @@
-// ---------- React imports
+// @packages
 import React from 'react'
 
-// ---------- Components imports
+// @scripts
 import TextField from '@material-ui/core/TextField';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
-import { Button, FormControl } from '@material-ui/core';
-
-// ---------- Styles imports
-import { makeStyles } from '@material-ui/core/styles';
+import  Button from '@material-ui/core/Button';
+import  FormControl from '@material-ui/core/FormControl';
 
 
-
-
-
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-      width: '25ch',
-
-    },
-  },
-}));
-
-const user = [
+const USERS = [
   {
       name: 'Heidy Alejandra',
       lastname: 'Primo',
@@ -54,7 +38,6 @@ const user = [
 
 
 const Users = () => {
-  const classes = useStyles();
 
   const [value, setValue] = React.useState('female');
 
@@ -63,7 +46,7 @@ const Users = () => {
   };
    
     return (
-      <form className={classes.root} noValidate autoComplete="off">
+      <form  noValidate autoComplete="off">
 
         <h1>Users</h1>
         <br /><TextField id="standard-basic" label="Nombre" />

@@ -1,31 +1,17 @@
-// ---------- React imports
+// @packages
 import React from 'react'
 
-// ---------- Components imports
+// @scripts
 import TextField from '@material-ui/core/TextField';
-import { Button } from '@material-ui/core';
-
-// ---------- Styles imports
-import { makeStyles } from '@material-ui/core/styles';
+import Button  from '@material-ui/core/Button';
 
 
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-      '& > *': {
-        margin: theme.spacing(1),
-        width: '25ch',
-  
-      },
-    },
-  }));
-  
 
 const Contact = () =>{
-    const classes = useStyles();
+    
 
     return (
-        <form className={classes.root} noValidate autoComplete="off"> 
+        <form noValidate autoComplete="off"> 
              <div> 
                 <br/> <h1><strong>CONTACT US:</strong> </h1> 
                 <br /><TextField id="standard-basic" label="Nombre" /> <br />

@@ -1,44 +1,27 @@
-// ---------- React imports
+// @packages
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-// ---------- Components imports
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-  } from "react-router-dom";
-  import { Link } from "react-router-dom";
+// @scripts
 import About from '../pages/about';
 import Home from '../pages/home/index ';
+import Navbar from '../layout/navbar';
+import Users from '../pages/users';
+import Contact from '../pages/contact';
+
 
 
 const Routing = ( )=>{
         return (
-         <Router>
-            <ul>
-            <li>
-                <Link to='/home'>
-                <Home/>
-                </Link>
-            </li>
-            <li>
-                <Link to='/about'>
-                    <About/>
-                </Link>
-            </li>
-        </ul>
-           
-             
-           <div>
+            <Router>
+            <Navbar />
             <Switch>
-                <Route exact path="/home" component={Home}/>
-                <Route exact path="/about" component={About}/>
+              <Route exact path="/home" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/users" component={Users} />
             </Switch>
-           </div>
-            
-             
-         </Router>
-         
+          </Router>
     
         );
     
