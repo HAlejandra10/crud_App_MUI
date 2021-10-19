@@ -63,7 +63,7 @@ const Users = () => {
         <br /><TextField id="standard-basic" label="Email" />
         <TextField
           id="standard-number"
-          label="Number"
+          label="Número"
           type="number"
           InputLabelProps={{
             shrink: true,
@@ -73,11 +73,11 @@ const Users = () => {
       <br />
       <div>  
       <br /><FormControl component="fieldset"> 
-      <FormLabel component="legend">Gender</FormLabel> 
+      <FormLabel component="legend">Género</FormLabel> 
       <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}> <br />
-        <FormControlLabel value="female" control={<Radio />} label="Female" /> 
-        <FormControlLabel value="male" control={<Radio />} label="Male" /> 
-        <FormControlLabel value="other" control={<Radio />} label="Other" />
+        <FormControlLabel value="female" control={<Radio />} label="Femenino" /> 
+        <FormControlLabel value="male" control={<Radio />} label="Masculino" /> 
+        <FormControlLabel value="other" control={<Radio />} label="Otro" />
       </RadioGroup>
     </FormControl>
   </div>
