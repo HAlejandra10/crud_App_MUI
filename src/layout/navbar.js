@@ -1,4 +1,7 @@
+// ---------- React imports 
 import React from 'react'
+
+// ---------- Components imports
 import {AppBar, Toolbar, Typography, makeStyles, CssBaseline} from '@material-ui/core';
 import { Link } from "react-router-dom";
 import DrawerComponent from '../components/drawerComponent';

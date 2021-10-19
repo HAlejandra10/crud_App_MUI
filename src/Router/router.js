@@ -1,4 +1,7 @@
+// ---------- React imports
 import React from 'react';
+
+// ---------- Components imports
 import {
     BrowserRouter as Router,
     Switch,
