@@ -1,13 +1,14 @@
 import React from 'react';
-import './App.css';
+import Routing from './Router/router';
 
-function App() {
+
+
+const  App=()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-       <div>Hola</div>
-      </header>
-    </div>
+  <> 
+     <Routing /> 
+  </>
+
   );
 }
 

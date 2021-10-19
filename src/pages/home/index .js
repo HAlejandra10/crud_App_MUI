@@ -1,7 +1,20 @@
+//@packages
 import React from "react";
 
-const Home =() => {
+
+
+        
+const Home = () => {
     return (
-        <div>Hola</div>
-    )
+             <div>
+               
+               <h1>CRUD APP  </h1>
+                
+              </div>      
+    );
+
+        
+    
 }
+
+export default Home;
