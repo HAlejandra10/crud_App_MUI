@@ -1,0 +1,35 @@
+[ 
+    { "id":1,
+          "name": "Heidy Alejandra",
+          "lastname": "Primo",
+          "email": "hprimo10@outlook.com",
+          "phone": "300 456 7896",
+          "gender": "woman"
+        },
+        {  
+          "id":2,
+          "name": "Juan carlos",
+          "lastname": "Ramirez",
+          "email": "juanca2@gmail.com",
+          "phone": "310 678 5432",
+          "gender": "man"
+        },
+        {
+          "id":3,
+          "name": "Miguel",
+          "lastname": "Velez",
+          "email": "miguelv@hotmail.com",
+          "phone": "345 678 1234",
+          "gender": "man"
+        },
+        {
+          "id":4,
+          "name": "NEW CONTACT",
+          "lastname": "Primo",
+          "email": "Eduprimo@hotmail.com",
+          "phone": "333 333 4444",
+          "gender": "man"
+        }
+  ]
+      
+  

@@ -48,6 +48,9 @@ const Navbar =() => {
             <Link to="/users" className={classes.link}>
               Users
             </Link>
+            <Link to="/counter" className={classes.link}>
+              Counter
+            </Link>
           </div>
       </Toolbar>
     </AppBar>

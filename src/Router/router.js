@@ -8,6 +8,7 @@ import Home from '../pages/home/index ';
 import Navbar from '../layout/navbar';
 import Users from '../pages/users';
 import Contact from '../pages/contact';
+import Counter from '../pages/counter';
 
 
 
@@ -20,6 +21,7 @@ const Routing = ( )=>{
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
               <Route path="/users" component={Users} />
+              <Route path="/counter" component={Counter} />
             </Switch>
           </Router>
     

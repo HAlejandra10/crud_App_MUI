@@ -1,92 +1,138 @@
 // @packages
-import React from 'react'
+import React, { useState } from 'react'
 
 // @scripts
-import TextField from '@material-ui/core/TextField';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormLabel from '@material-ui/core/FormLabel';
-import  Button from '@material-ui/core/Button';
-import  FormControl from '@material-ui/core/FormControl';
-
-
-const USERS = [
-  {
-      name: 'Heidy Alejandra',
-      lastname: 'Primo',
-      email: 'hprimo10@outlook.com',
-      tel: '300 456 7896',
-      gender: 'woman'
-  },
-  {
-      name: 'Juan carlos',
-      lastname: 'Ramirez',
-      email: 'juanca2@gmail.com',
-      tel: '310 678 5432',
-      gender: 'man'
-  },
-  {
-      name: 'Miguel',
-      lastname: 'Velez',
-      email: 'miguelv@hotmail.com',
-      tel: '345 678 1234',
-      gender: 'man'
-  },
-];
-
-
+import {nanoid} from 'nanoid';
+// import TextField from '@material-ui/core/TextField';
+// import Radio from '@material-ui/core/Radio';
+// import RadioGroup from '@material-ui/core/RadioGroup';
+// import FormControlLabel from '@material-ui/core/FormControlLabel';
+// import FormLabel from '@material-ui/core/FormLabel';
+// import  Button from '@material-ui/core/Button';
+// import  FormControl from '@material-ui/core/FormControl';
+import data from '../json/userdata.json';
+//import { Button } from '@material-ui/core';
+//import Usertable from '../pages/usertable';
 
 const Users = () => {
+  //const usuarios = usersinfo.usersinfo 
+  //const Usertable = () => {}
 
-  const [value, setValue] = React.useState('female');
+const [usuarios, setUsuarios] = useState(data);
+const [addFormData, setaddFormData] = useState({
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-   
-    return (
-      <form  noValidate autoComplete="off">
+     name: '',
+     lastname: '',
+     email: '',
+     phone: '', 
+     gender: ''
 
-        <h1>Users</h1>
-        <br /><TextField id="standard-basic" label="Nombre" />
-         <TextField id="standard-basic" label="Apellido" /><br />
-        <br /><TextField id="standard-basic" label="Email" />
-        <TextField
-          id="standard-number"
-          label="Número"
-          type="number"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        /><br />
+});
 
-      <br />
-      <div>  
-      <br /><FormControl component="fieldset"> 
-      <FormLabel component="legend">Género</FormLabel> 
-      <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}> <br />
-        <FormControlLabel value="female" control={<Radio />} label="Femenino" /> 
-        <FormControlLabel value="male" control={<Radio />} label="Masculino" /> 
-        <FormControlLabel value="other" control={<Radio />} label="Otro" />
-      </RadioGroup>
-    </FormControl>
-  </div>
-  <div>  
-      <br /><FormControl component="fieldset"> 
-      <FormLabel component="legend">Estado</FormLabel>
-      <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}> <br />
-        <FormControlLabel value="active" control={<Radio />} label="Activo" /> 
-        <FormControlLabel value="inactive" control={<Radio />} label="No Activo" /> 
-      </RadioGroup>
-    </FormControl>
-    <br/>
-    <br/><Button variant="contained">Submit</Button>
-  </div>
+const handleAddFormChange = (event) =>{
+   event.preventDefault();
   
-      </form>
-    );
+  const fieldName = event.target.getAttribute('name');
+  const fieldValue = event.target.value;
 
+  const newFormData = {...addFormData};
+  newFormData[fieldName] = fieldValue;
+
+  setaddFormData(newFormData);
+};
+
+const handleAddFormSubmit=(event)=> {
+   event.preventDefault();
+
+   const newUser = {
+     id: nanoid(),
+      name: addFormData.name,
+      lastname: addFormData.lastname,
+      email: addFormData.email,
+      phone: addFormData.phone,
+      gender: addFormData.gender
+   };
+   const newUsers = [...usuarios, newUser]
+   setUsuarios(newUsers);
+ 
+
+}
+ 
+
+ console.log(data);
+
+
+
+return (
+          
+<div>
+
+<table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Gender</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {usuarios.map((usuario)=>(
+            
+              <tr>
+               <td>{usuario.name}</td>
+               <td>{usuario.lastname}</td>
+               <td>{usuario.email}</td>
+               <td>{usuario.phone}</td>
+               <td>{usuario.gender}</td>
+           </tr>
+           ))}   
+        </tbody>
+      </table>
+     <h2>New A User</h2>
+      <form onSubmit={handleAddFormSubmit} >
+        <input
+         type="text" 
+        name='name'
+         required='required'
+         placeholder='Enter a name...'
+        onChange={handleAddFormChange}
+        />
+        <input 
+        type="text"  
+        name='lastname' 
+        required='required' 
+        placeholder='Enter a Lastname...' 
+        onChange={handleAddFormChange}
+        />
+        <input 
+        type="text"
+         name='email'
+         required='required' 
+         placeholder='Enter a Email...' 
+         onChange={handleAddFormChange}/>
+        <input
+         type="text" 
+         name='phone' 
+         required='required' 
+         placeholder='Enter a Phone...' 
+         onChange={handleAddFormChange}
+         />
+        
+  <p>Gender:</p>
+  <input type="radio" id="html" name="gender" value="Femenine" onChange={handleAddFormChange}/>
+  <label for="femenine">Femenine</label><br/>
+  <input type="radio" id="masculine" name="gender" value="Masculine" onChange={handleAddFormChange}/>
+  <label for="masculine">Masculine</label><br/>
+  <input type="radio" id="other" name="gender" value="Other" onChange={handleAddFormChange}/>
+  <label for="other">Other</label>
+   <button type='submit'>Submit</button> 
+   {/* <Button type= 'submit' variant="outlined">Submit</Button> */}
+      </form>
+     </div>
+    );
   };
 
   export default Users;
