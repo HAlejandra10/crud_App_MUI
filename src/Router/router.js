@@ -9,6 +9,7 @@ import Navbar from '../layout/navbar';
 import Users from '../pages/users';
 import Contact from '../pages/contact';
 import Counter from '../pages/counter';
+import Async from '../pages/async';
 
 
 
@@ -23,6 +24,7 @@ const Routing = ( )=>{
               <Route path="/contact" component={Contact} />
               <Route path="/users" component={Users} />
               <Route path="/counter" component={Counter} />
+              <Route path="/async" component={Async} />
             </Switch>
           </Router>
     

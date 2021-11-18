@@ -51,6 +51,9 @@ const Navbar =() => {
             <Link to="/counter" className={classes.link}>
               Counter
             </Link>
+            <Link to="/async" className={classes.link}>
+              Async
+            </Link>
           </div>
       </Toolbar>
     </AppBar>
